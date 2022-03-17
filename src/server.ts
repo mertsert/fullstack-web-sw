@@ -9,12 +9,17 @@
      constructor () {
          this._express = express.default();
          this._express.use(express.json());
-         this._express.use(express.static("../client/build"));
+         const path = require("path");
+         this._express.use(express.static(path.join(__dirname,"..","client","build")));
+         this._express.get("/", (req,res) => {
+             res.sendFile("index.html");
+         });
+
          this._routes = new Routes
-         this._express.use('/', this._routes.getRouter());
+         this._express.use('/api', this._routes.getRouter());
      }
  
-     public init (port: number): any {
+     public listen (port: number): any {
          // Start the server on the specified port
          this._express.listen(port, () => {
              return console.log("Server Running @ http://localhost:",port);

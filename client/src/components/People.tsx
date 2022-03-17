@@ -17,7 +17,7 @@ const People = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/people?page=" + page)
+    fetch("/api/people?page=" + page)
       .then(resp => {
         return resp.json();
       }).then(data => {

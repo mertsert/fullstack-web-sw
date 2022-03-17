@@ -30,7 +30,7 @@ const Person = () => {
     const navigate = useNavigate();
     const handleNavigate = React.useCallback(() => navigate('/', { replace: true }), [navigate]);
     React.useEffect(() => {
-        fetch("/people/" + id)
+        fetch("/api/people/" + id)
             .then(resp => {
                 return resp.json();
             }).then(data => {

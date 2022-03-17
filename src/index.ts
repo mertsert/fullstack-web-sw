@@ -1,3 +1,5 @@
 
 import Server from './server';
-Server.init(9090);
+
+
+Server.listen(9090);

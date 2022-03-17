@@ -68,7 +68,7 @@ const People = () => {
   return (
     <div className="People">
       <Panel bordered bodyFill>
-        <Table height={getHeight(window) - 420}
+        <Table height={getHeight(window) - 360}
           width={getWidth(window) - 890}
           data={data}
           loading={loading}
